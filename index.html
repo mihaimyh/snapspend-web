@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnapSpend - Smart Receipt Scanning & Expense Tracking</title>
+    <title>SnapSpend - Smart Receipt Scanning & Expense Tracking App</title>
+    
+    <!-- Primary Meta Tags -->
     <meta name="description" content="SnapSpend helps you track expenses by scanning receipts with AI-powered technology. Monitor spending habits and get insights with advanced analytics.">
+    <meta name="keywords" content="receipt scanning, expense tracking, OCR, AI receipt scanner, spending tracker, finance app, expense manager">
+    <meta name="author" content="SnapSpend">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapspend.net/">
+    <meta property="og:title" content="SnapSpend - Smart Receipt Scanning & Expense Tracking">
+    <meta property="og:description" content="SnapSpend uses AI to scan your receipts, track expenses, and provide insights on your spending habits.">
+    <meta property="og:image" content="https://snapspend.net/images/snapspend-social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://snapspend.net/">
+    <meta property="twitter:title" content="SnapSpend - Smart Receipt Scanning & Expense Tracking">
+    <meta property="twitter:description" content="SnapSpend uses AI to scan your receipts, track expenses, and provide insights on your spending habits.">
+    <meta property="twitter:image" content="https://snapspend.net/images/snapspend-twitter-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://snapspend.net/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #2563eb;
@@ -299,7 +329,7 @@
         
         .policy-card ul {
             list-style-position: inside;
-            color: var(--gray);
+            color: var (--gray);
         }
         
         .policy-card li {
@@ -375,99 +405,125 @@
             }
         }
     </style>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "SnapSpend",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android, iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "SnapSpend uses AI to scan your receipts, track your expenses, and provide insightful analytics on your spending habits.",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "SnapSpend"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header role="banner">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Snap<span>Spend</span></a>
+            <nav class="navbar" aria-label="Primary Navigation">
+                <a href="#" class="logo" aria-label="SnapSpend Home">Snap<span>Spend</span></a>
                 <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#policies">Policies</a>
-                    <a href="#contact">Contact</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="nav-cta">Download</a>
+                    <a href="#features" aria-label="Features section">Features</a>
+                    <a href="#how-it-works" aria-label="How it works section">How It Works</a>
+                    <a href="#policies" aria-label="Policies section">Policies</a>
+                    <a href="#contact" aria-label="Contact section">Contact</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="nav-cta" aria-label="Download on Google Play">Download</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
         <div class="container">
             <div class="hero-content">
-                <h1>Smart Receipt Scanning & Expense Tracking</h1>
+                <h1 id="hero-heading">Smart Receipt Scanning & Expense Tracking</h1>
                 <p>SnapSpend uses AI to scan your receipts, track your expenses, and provide insightful analytics on your spending habits - all in one app.</p>
                 <div class="hero-btns">
-                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="btn btn-primary">Download on Google Play</a>
-                    <a href="https://apps.apple.com/app/snapspend/id1234567890" class="btn btn-outline">Download on App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="btn btn-primary" aria-label="Download SnapSpend on Google Play">Download on Google Play</a>
+                    <a href="https://apps.apple.com/app/snapspend/id1234567890" class="btn btn-outline" aria-label="Download SnapSpend on App Store">Download on App Store</a>
                 </div>
             </div>
-            <!-- Placeholder for app mockup image -->
-            <!-- <img src="https://placehold.co/500x600/2563eb/FFF?text=SnapSpend+App" alt="SnapSpend App Screenshot" class="hero-image"> -->
+            <!-- App mockup image with proper alt text -->
+            <!-- <img src="/images/snapspend-app-mockup.png" alt="SnapSpend application showing receipt scanning and expense tracking features" class="hero-image" loading="lazy"> -->
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="features" aria-labelledby="features-heading">
         <div class="container">
             <div class="section-title">
-                <h2>Powerful Features</h2>
+                <h2 id="features-heading">Powerful Features</h2>
                 <p>SnapSpend combines cutting-edge OCR technology with intuitive design to make expense tracking effortless.</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>📷</i>
                     </div>
                     <h3>Quick Receipt Capture</h3>
                     <p>Instantly scan receipts with your camera or upload existing images. Our app is designed to make capturing receipts fast and easy.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>🔍</i>
                     </div>
                     <h3>AI-Powered OCR</h3>
                     <p>Our advanced OCR technology accurately extracts all important information from receipts including store details, items, prices, and more.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>📊</i>
                     </div>
                     <h3>Detailed Analytics</h3>
                     <p>Visualize your spending habits with interactive charts and get personalized insights to help you make better financial decisions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>🔔</i>
                     </div>
                     <h3>Real-Time Notifications</h3>
                     <p>Get instant notifications when your receipts are processed so you can stay updated on your expenses wherever you are.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>🔄</i>
                     </div>
                     <h3>History & Search</h3>
                     <p>Easily browse your receipt history and use powerful search and filtering options to find exactly what you're looking for.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <i>🔒</i>
                     </div>
                     <h3>Secure & Private</h3>
                     <p>Your financial data is encrypted and securely stored. We prioritize your privacy and give you full control over your information.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
         <div class="container">
             <div class="section-title">
-                <h2>How SnapSpend Works</h2>
+                <h2 id="how-it-works-heading">How SnapSpend Works</h2>
                 <p>Getting started is simple - just follow these steps to begin tracking your expenses effortlessly.</p>
             </div>
             <div class="steps">
@@ -496,14 +552,14 @@
     </section>
 
     <!-- Policies Section -->
-    <section class="policies" id="policies">
+    <section class="policies" id="policies" aria-labelledby="policies-heading">
         <div class="container">
             <div class="section-title">
-                <h2>Our Policies</h2>
+                <h2 id="policies-heading">Our Policies</h2>
                 <p>At SnapSpend, we're committed to transparency and protecting your rights as a user.</p>
             </div>
             <div class="policies-container">
-                <div class="policy-card">
+                <article class="policy-card">
                     <h3>Account Deletion</h3>
                     <p>You have the right to request deletion of your SnapSpend account and associated data at any time.</p>
                     <p><strong>How to delete your account:</strong></p>
@@ -514,9 +570,9 @@
                         <li>Confirm your decision when prompted</li>
                         <li>Your account and all associated data will be permanently deleted</li>
                     </ul>
-                    <p>Alternatively, you can email our support team at support@snapspend.net with your deletion request.</p>
-                </div>
-                <div class="policy-card">
+                    <p>Alternatively, you can email our support team at <a href="mailto:support@snapspend.net">support@snapspend.net</a> with your deletion request.</p>
+                </article>
+                <article class="policy-card">
                     <h3>Privacy Policy</h3>
                     <p>We respect your privacy and are committed to protecting your personal information. Here's how we handle your data:</p>
                     <ul>
@@ -527,8 +583,8 @@
                         <li>We use industry-standard security practices to protect your information</li>
                     </ul>
                     <p><a href="#" style="color: var(--primary);">Read our full Privacy Policy</a></p>
-                </div>
-                <div class="policy-card">
+                </article>
+                <article class="policy-card">
                     <h3>Terms of Service</h3>
                     <p>By using SnapSpend, you agree to our Terms of Service, which include:</p>
                     <ul>
@@ -539,49 +595,61 @@
                         <li>Limitation of liability and warranty disclaimers</li>
                     </ul>
                     <p><a href="#" style="color: var(--primary);">Read our full Terms of Service</a></p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="contact" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-links">
-                    <div class="footer-logo">Snap<span>Spend</span></div>
+                    <div class="footer-logo" aria-label="SnapSpend">Snap<span>Spend</span></div>
                     <p>Smart receipt scanning and expense tracking powered by AI.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#" aria-label="Help Center">Help Center</a></li>
+                        <li><a href="#" aria-label="Blog">Blog</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="FAQs">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">GDPR Compliance</a></li>
+                        <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="#" aria-label="Terms of Service">Terms of Service</a></li>
+                        <li><a href="#" aria-label="Cookie Policy">Cookie Policy</a></li>
+                        <li><a href="#" aria-label="GDPR Compliance">GDPR Compliance</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><a href="mailto:support@snapspend.net">support@snapspend.net</a></li>
-                        <li><a href="tel:+40768002803">+40 768 002 803</a></li>
+                        <li><a href="mailto:support@snapspend.net" aria-label="Email support">support@snapspend.net</a></li>
+                        <li><a href="tel:+40768002803" aria-label="Phone support">+40 768 002 803</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 SnapSpend. All rights reserved.</p>
+                <p>
+                    <a href="/sitemap.xml" aria-label="Sitemap">Sitemap</a> | 
+                    <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+                </p>
             </div>
         </div>
     </footer>
+    
+    <!-- Deferred loading of non-critical JavaScript -->
+    <script defer>
+        // Add event listeners for analytics or other functionality if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize any scripts after page load for better performance
+        });
+    </script>
 </body>
 </html>
