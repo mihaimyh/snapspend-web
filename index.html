@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapSpend - Smart Receipt Scanning & Expense Tracking</title>
+    <meta name="description" content="SnapSpend helps you track expenses by scanning receipts with AI-powered technology. Monitor spending habits and get insights with advanced analytics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f1f5f9;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 1.5rem 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1626197031507-c9c6dcd4336e?ixlib=rb-4.0.3&auto=format&fit=crop') no-repeat center/cover;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-image {
+                display: block;
+            }
+        }
+        
+        /* Features section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* How it works */
+        .how-it-works {
+            padding: 5rem 0;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        
+        .step h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .step p {
+            color: var(--gray);
+        }
+        
+        /* Policies Section */
+        .policies {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .policies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .policy-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .policy-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        .policy-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-card ul {
+            list-style-position: inside;
+            color: var(--gray);
+        }
+        
+        .policy-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Snap<span>Spend</span></a>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#policies">Policies</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspend.mobile" class="nav-cta">Download</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Smart Receipt Scanning & Expense Tracking</h1>
+                <p>SnapSpend uses AI to scan your receipts, track your expenses, and provide insightful analytics on your spending habits - all in one app.</p>
+                <div class="hero-btns">
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspend.mobile" class="btn btn-primary">Download on Google Play</a>
+                    <a href="https://apps.apple.com/app/snapspend/id1234567890" class="btn btn-outline">Download on App Store</a>
+                </div>
+            </div>
+            <!-- Placeholder for app mockup image -->
+            <!-- <img src="https://placehold.co/500x600/2563eb/FFF?text=SnapSpend+App" alt="SnapSpend App Screenshot" class="hero-image"> -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Features</h2>
+                <p>SnapSpend combines cutting-edge OCR technology with intuitive design to make expense tracking effortless.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>📷</i>
+                    </div>
+                    <h3>Quick Receipt Capture</h3>
+                    <p>Instantly scan receipts with your camera or upload existing images. Our app is designed to make capturing receipts fast and easy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔍</i>
+                    </div>
+                    <h3>AI-Powered OCR</h3>
+                    <p>Our advanced OCR technology accurately extracts all important information from receipts including store details, items, prices, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>📊</i>
+                    </div>
+                    <h3>Detailed Analytics</h3>
+                    <p>Visualize your spending habits with interactive charts and get personalized insights to help you make better financial decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔔</i>
+                    </div>
+                    <h3>Real-Time Notifications</h3>
+                    <p>Get instant notifications when your receipts are processed so you can stay updated on your expenses wherever you are.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔄</i>
+                    </div>
+                    <h3>History & Search</h3>
+                    <p>Easily browse your receipt history and use powerful search and filtering options to find exactly what you're looking for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🔒</i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your financial data is encrypted and securely stored. We prioritize your privacy and give you full control over your information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How SnapSpend Works</h2>
+                <p>Getting started is simple - just follow these steps to begin tracking your expenses effortlessly.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Download & Sign Up</h3>
+                    <p>Download SnapSpend from your app store and create an account using your preferred authentication method.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Capture Receipt</h3>
+                    <p>Take a photo of your receipt with the in-app camera or upload an existing image from your gallery.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Automatic Processing</h3>
+                    <p>Our AI technology extracts all relevant information from your receipt and organizes it for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Track & Analyze</h3>
+                    <p>Access your spending history and detailed analytics to gain insights into your financial habits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section class="policies" id="policies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Policies</h2>
+                <p>At SnapSpend, we're committed to transparency and protecting your rights as a user.</p>
+            </div>
+            <div class="policies-container">
+                <div class="policy-card">
+                    <h3>Account Deletion</h3>
+                    <p>You have the right to request deletion of your SnapSpend account and associated data at any time.</p>
+                    <p><strong>How to delete your account:</strong></p>
+                    <ul>
+                        <li>Open the SnapSpend app and navigate to your Profile</li>
+                        <li>Select "User Account Settings"</li>
+                        <li>Tap on "Delete Account"</li>
+                        <li>Confirm your decision when prompted</li>
+                        <li>Your account and all associated data will be permanently deleted</li>
+                    </ul>
+                    <p>Alternatively, you can email our support team at support@snapspend.com with your deletion request.</p>
+                </div>
+                <div class="policy-card">
+                    <h3>Privacy Policy</h3>
+                    <p>We respect your privacy and are committed to protecting your personal information. Here's how we handle your data:</p>
+                    <ul>
+                        <li>We only collect information necessary to provide our services</li>
+                        <li>Receipt data is stored securely and encrypted</li>
+                        <li>Your data is never sold to third parties</li>
+                        <li>You can export or delete your data at any time</li>
+                        <li>We use industry-standard security practices to protect your information</li>
+                    </ul>
+                    <p><a href="#" style="color: var(--primary);">Read our full Privacy Policy</a></p>
+                </div>
+                <div class="policy-card">
+                    <h3>Terms of Service</h3>
+                    <p>By using SnapSpend, you agree to our Terms of Service, which include:</p>
+                    <ul>
+                        <li>Acceptable use of the application</li>
+                        <li>Subscription terms and billing policies</li>
+                        <li>Your rights and responsibilities as a user</li>
+                        <li>Our intellectual property rights</li>
+                        <li>Limitation of liability and warranty disclaimers</li>
+                    </ul>
+                    <p><a href="#" style="color: var(--primary);">Read our full Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <div class="footer-logo">Snap<span>Spend</span></div>
+                    <p>Smart receipt scanning and expense tracking powered by AI.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:support@snapspend.com">support@snapspend.com</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SnapSpend. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
