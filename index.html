@@ -10,7 +10,7 @@
     <meta name="keywords" content="receipt scanning, expense tracking, OCR, AI receipt scanner, spending tracker, finance app, expense manager">
     <meta name="author" content="SnapSpend">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#A78BFA">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -40,12 +40,45 @@
     
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --light: #f1f5f9;
-            --gray: #64748b;
+            /* Primary colors - from MAUI app */
+            --primary: #A78BFA;
+            --primary-dark: #7E6EE8;
+            --primary-variant: #4C39D4;
+            
+            /* Secondary colors */
+            --secondary: #5945E7;
+            --secondary-variant: #9778F2;
+            
+            /* Surface colors */
+            --surface: #FFFFFF;
+            --surface-variant: #F2F2F2;
+            --surface-variant2: #E8E8E8;
+            --surface-variant3: #FAF5FF;
+            
+            /* Text colors */
+            --text: #212121;
+            --text-secondary: #666666;
+            
+            /* Dark theme colors (for footer and dark sections) */
+            --dark-bg: #121212;
+            --dark-surface: #2A2A2A;
+            --dark-surface2: #333333;
+            --dark-text: #F5F5F5;
+            --dark-text-secondary: #B0B0B0;
+            
+            /* Gray scale */
+            --gray-100: #E1E1E1;
+            --gray-200: #C8C8C8;
+            --gray-300: #ACACAC;
+            --gray-400: #919191;
+            --gray-500: #6E6E6E;
+            --gray-600: #404040;
+            --gray-900: #212121;
+            
+            /* Status colors */
             --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
         }
         
         * {
@@ -57,8 +90,8 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--secondary);
-            background-color: #fff;
+            color: var(--text);
+            background-color: var(--surface);
         }
         
         .container {
@@ -87,7 +120,7 @@
         }
         
         .logo span {
-            color: var(--secondary);
+            color: var(--text);
         }
         
         .nav-links {
@@ -97,7 +130,7 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--secondary);
+            color: var(--text);
             font-weight: 500;
             transition: color 0.3s;
         }
@@ -116,7 +149,7 @@
         }
         
         .nav-cta:hover {
-            background-color: var(--primary-dark);
+            background-color: var(--primary-variant);
             color: white;
         }
         
@@ -135,13 +168,13 @@
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            color: var(--secondary);
+            color: var(--text);
         }
         
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            color: var(--gray);
+            color: var(--text-secondary);
         }
         
         .hero-btns {
@@ -165,11 +198,11 @@
         }
         
         .btn-primary:hover {
-            background-color: var(--primary-dark);
+            background-color: var(--primary-variant);
         }
         
         .btn-outline {
-            border: 1px solid var(--primary);
+            border: 1px solid var (--primary);
             color: var(--primary);
         }
         
@@ -196,7 +229,7 @@
         /* Features section */
         .features {
             padding: 5rem 0;
-            background-color: var(--light);
+            background-color: var(--surface-variant);
         }
         
         .section-title {
@@ -210,7 +243,7 @@
         }
         
         .section-title p {
-            color: var(--gray);
+            color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -222,7 +255,7 @@
         }
         
         .feature-card {
-            background-color: white;
+            background-color: var(--surface);
             border-radius: 0.5rem;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -255,7 +288,7 @@
         }
         
         .feature-card p {
-            color: var(--gray);
+            color: var(--text-secondary);
         }
         
         /* How it works */
@@ -294,13 +327,13 @@
         }
         
         .step p {
-            color: var(--gray);
+            color: var(--text-secondary);
         }
         
         /* Policies Section */
         .policies {
             padding: 5rem 0;
-            background-color: var(--light);
+            background-color: var(--surface-variant);
         }
         
         .policies-container {
@@ -310,7 +343,7 @@
         }
         
         .policy-card {
-            background-color: white;
+            background-color: var(--surface);
             border-radius: 0.5rem;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -323,13 +356,13 @@
         }
         
         .policy-card p {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
         }
         
         .policy-card ul {
             list-style-position: inside;
-            color: var (--gray);
+            color: var(--text-secondary);
         }
         
         .policy-card li {
@@ -339,8 +372,8 @@
         /* Footer */
         footer {
             padding: 3rem 0;
-            background-color: var(--secondary);
-            color: white;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
         }
         
         .footer-grid {
@@ -350,7 +383,7 @@
         }
         
         .footer-logo {
-            color: white;
+            color: var(--dark-text);
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
@@ -374,7 +407,7 @@
         }
         
         .footer-links a {
-            color: var(--light);
+            color: var(--dark-text-secondary);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -388,7 +421,7 @@
             padding-top: 1.5rem;
             margin-top: 2rem;
             text-align: center;
-            color: var(--gray);
+            color: var(--gray-500);
         }
         
         @media (max-width: 768px) {
@@ -570,7 +603,7 @@
                         <li>Confirm your decision when prompted</li>
                         <li>Your account and all associated data will be permanently deleted</li>
                     </ul>
-                    <p>Alternatively, you can email our support team at <a href="mailto:support@snapspend.net">support@snapspend.net</a> with your deletion request.</p>
+                    <p>Alternatively, you can email our support team at <a href="mailto:support@snapspend.net" style="color: var(--primary);">support@snapspend.net</a> with your deletion request.</p>
                 </article>
                 <article class="policy-card">
                     <h3>Privacy Policy</h3>
@@ -582,7 +615,7 @@
                         <li>You can export or delete your data at any time</li>
                         <li>We use industry-standard security practices to protect your information</li>
                     </ul>
-                    <p><a href="#" style="color: var(--primary);">Read our full Privacy Policy</a></p>
+                    <p><a href="privacy-policy.html" style="color: var(--primary);">Read our full Privacy Policy</a></p>
                 </article>
                 <article class="policy-card">
                     <h3>Terms of Service</h3>
@@ -594,7 +627,7 @@
                         <li>Our intellectual property rights</li>
                         <li>Limitation of liability and warranty disclaimers</li>
                     </ul>
-                    <p><a href="#" style="color: var(--primary);">Read our full Terms of Service</a></p>
+                    <p><a href="terms-of-service.html" style="color: var(--primary);">Read our full Terms of Service</a></p>
                 </article>
             </div>
         </div>
@@ -620,10 +653,10 @@
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
-                        <li><a href="#" aria-label="Terms of Service">Terms of Service</a></li>
-                        <li><a href="#" aria-label="Cookie Policy">Cookie Policy</a></li>
-                        <li><a href="#" aria-label="GDPR Compliance">GDPR Compliance</a></li>
+                        <li><a href="privacy-policy.html" aria-label="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" aria-label="Terms of Service">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" aria-label="Cookie Policy">Cookie Policy</a></li>
+                        <li><a href="gdpr-compliance.html" aria-label="GDPR Compliance">GDPR Compliance</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -638,7 +671,7 @@
                 <p>&copy; 2025 SnapSpend. All rights reserved.</p>
                 <p>
                     <a href="/sitemap.xml" aria-label="Sitemap">Sitemap</a> | 
-                    <a href="#" aria-label="Accessibility Statement">Accessibility</a>
+                    <a href="accessibility.html" aria-label="Accessibility Statement">Accessibility</a>
                 </p>
             </div>
         </div>
