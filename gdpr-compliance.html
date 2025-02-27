@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Compliance - SnapSpend</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="SnapSpend GDPR Compliance - Learn about your data protection rights under GDPR.">
+    <meta name="keywords" content="GDPR, data protection, data rights, SnapSpend, EU regulations">
+    <meta name="author" content="SnapSpend">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#A78BFA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapspend.net/gdpr-compliance.html">
+    <meta property="og:title" content="GDPR Compliance - SnapSpend">
+    <meta property="og:description" content="Learn about your data protection rights under GDPR when using SnapSpend.">
+    <meta property="og:image" content="https://snapspend.net/images/snapspend-social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://snapspend.net/gdpr-compliance.html">
+    <meta property="twitter:title" content="GDPR Compliance - SnapSpend">
+    <meta property="twitter:description" content="Learn about your data protection rights under GDPR when using SnapSpend.">
+    <meta property="twitter:image" content="https://snapspend.net/images/snapspend-twitter-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://snapspend.net/gdpr-compliance.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Primary colors - from MAUI app */
+            --primary: #A78BFA;
+            --primary-dark: #7E6EE8;
+            --primary-variant: #4C39D4;
+            
+            /* Secondary colors */
+            --secondary: #5945E7;
+            --secondary-variant: #9778F2;
+            
+            /* Surface colors */
+            --surface: #FFFFFF;
+            --surface-variant: #F2F2F2;
+            --surface-variant2: #E8E8E8;
+            --surface-variant3: #FAF5FF;
+            
+            /* Text colors */
+            --text: #212121;
+            --text-secondary: #666666;
+            
+            /* Dark theme colors (for footer and dark sections) */
+            --dark-bg: #121212;
+            --dark-surface: #2A2A2A;
+            --dark-surface2: #333333;
+            --dark-text: #F5F5F5;
+            --dark-text-secondary: #B0B0B0;
+            
+            /* Gray scale */
+            --gray-100: #E1E1E1;
+            --gray-200: #C8C8C8;
+            --gray-300: #ACACAC;
+            --gray-400: #919191;
+            --gray-500: #6E6E6E;
+            --gray-600: #404040;
+            --gray-900: #212121;
+            
+            /* Status colors */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--surface);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--surface-variant2);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--text);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-variant);
+            color: white;
+        }
+        
+        /* Content styles */
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text);
+        }
+        
+        .content h3 {
+            font-size: 1.4rem;
+            margin: 1.8rem 0 0.8rem;
+            color: var(--primary-dark);
+        }
+        
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .content ul, .content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary);
+            transition: opacity 0.3s;
+        }
+        
+        .content a:hover {
+            opacity: 0.8;
+        }
+        
+        .content .last-updated {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--surface-variant2);
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .rights-card {
+            background-color: var(--surface-variant3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .rights-card h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+        
+        .rights-card p {
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--dark-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--gray-500);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .content h1 {
+                font-size: 2rem;
+            }
+            
+            .content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Primary Navigation">
+                <a href="index.html" class="logo" aria-label="SnapSpend Home">Snap<span>Spend</span></a>
+                <div class="nav-links">
+                    <a href="index.html#features" aria-label="Features section">Features</a>
+                    <a href="index.html#how-it-works" aria-label="How it works section">How It Works</a>
+                    <a href="index.html#policies" aria-label="Policies section">Policies</a>
+                    <a href="index.html#contact" aria-label="Contact section">Contact</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="nav-cta" aria-label="Download on Google Play">Download</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <h1>GDPR Compliance</h1>
+            
+            <p>Last updated: January 15, 2025</p>
+            
+            <p>At SnapSpend, we are committed to protecting your personal data and complying with the EU General Data Protection Regulation (GDPR). This page explains how we adhere to GDPR principles and outlines your rights as a data subject.</p>
+            
+            <h2>1. Our Commitment to GDPR Compliance</h2>
+            
+            <p>The General Data Protection Regulation (GDPR) is a comprehensive data protection law in the EU that came into effect on May 25, 2018. It gives individuals greater control over their personal data and requires organizations to be transparent about data collection and use.</p>
+            
+            <p>SnapSpend is fully committed to adhering to the requirements of the GDPR. We have implemented technical and organizational measures to protect your data and ensure that our data processing activities comply with GDPR principles.</p>
+            
+            <h2>2. Data Controller Information</h2>
+            
+            <p>For the purposes of the GDPR, SnapSpend is the data controller for personal data collected through our application and website. This means we determine the purposes and means of processing your personal data.</p>
+            
+            <p>Our contact details are:</p>
+            <p>
+                SnapSpend<br>
+                123 Tech Street, Suite 456<br>
+                San Francisco, CA 94107, USA<br>
+                Email: <a href="mailto:dpo@snapspend.net">dpo@snapspend.net</a><br>
+                Phone: +40 768 002 803
+            </p>
+            
+            <h2>3. Data Protection Officer</h2>
+            
+            <p>We have appointed a Data Protection Officer (DPO) who is responsible for overseeing questions in relation to this GDPR compliance statement and our data protection practices. If you have any questions about this statement, including any requests to exercise your legal rights, please contact our DPO at <a href="mailto:dpo@snapspend.net">dpo@snapspend.net</a>.</p>
+            
+            <h2>4. Your Rights Under GDPR</h2>
+            
+            <p>Under the GDPR, you have the following rights regarding your personal data:</p>
+            
+            <div class="rights-card">
+                <h3>Right to Access</h3>
+                <p>You have the right to request a copy of your personal data that we hold, as well as information about how we process it.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Right to Rectification</h3>
+                <p>You have the right to request that we correct any inaccurate or incomplete personal data we hold about you.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Right to Erasure (Right to be Forgotten)</h3>
+                <p>You have the right to request the deletion or removal of your personal data where there is no compelling reason for its continued processing.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Right to Restrict Processing</h3>
+                <p>You have the right to request that we restrict or block the processing of your personal data in certain circumstances.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Right to Data Portability</h3>
+                <p>You have the right to request a copy of your personal data in a structured, commonly used, machine-readable format for your own purposes.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Right to Object</h3>
+                <p>You have the right to object to our processing of your personal data in certain circumstances, including for direct marketing purposes or where processing is based on legitimate interests.</p>
+            </div>
+            
+            <div class="rights-card">
+                <h3>Rights Related to Automated Decision Making and Profiling</h3>
+                <p>You have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning you or significantly affects you.</p>
+            </div>
+            
+            <h2>5. How to Exercise Your Rights</h2>
+            
+            <p>You can exercise your rights in the following ways:</p>
+            
+            <h3>5.1 Within the App</h3>
+            <p>Many of your rights can be exercised directly within the SnapSpend app:</p>
+            <ul>
+                <li><strong>Access and Data Portability:</strong> In the app, go to Profile → User Account Settings → Export My Data</li>
+                <li><strong>Rectification:</strong> You can update your personal details in the Profile section</li>
+                <li><strong>Erasure:</strong> To delete your account and associated data, go to Profile → User Account Settings → Delete Account</li>
+                <li><strong>Object/Restrict Processing:</strong> Modify your privacy preferences in Profile → Privacy Settings</li>
+            </ul>
+            
+            <h3>5.2 By Contacting Us</h3>
+            <p>You can also exercise your rights by contacting our Data Protection Officer at <a href="mailto:dpo@snapspend.net">dpo@snapspend.net</a>. Please include:</p>
+            <ul>
+                <li>Your full name</li>
+                <li>Your email address associated with your SnapSpend account</li>
+                <li>A clear description of which right(s) you want to exercise</li>
+                <li>Any relevant details to help us process your request</li>
+            </ul>
+            
+            <h2>6. Our Response Timeline</h2>
+            
+            <p>We will respond to all legitimate requests within one month. Occasionally it may take us longer if your request is particularly complex or you have made several requests. In this case, we will notify you and keep you updated.</p>
+            
+            <p>There is no fee for most requests, but we may charge a reasonable fee if your request is clearly unfounded, repetitive, or excessive. Alternatively, we may refuse to comply with your request in these circumstances.</p>
+            
+            <h2>7. International Data Transfers</h2>
+            
+            <p>As our services operate globally, your personal data may be transferred to, and processed in, countries outside of the European Economic Area (EEA). These countries may have data protection laws different from those in your country.</p>
+            
+            <p>We ensure that such transfers are conducted in accordance with applicable data protection laws. We have implemented safeguards such as Standard Contractual Clauses approved by the European Commission to ensure your personal data receives an adequate level of protection.</p>
+            
+            <h2>8. Data Breach Procedures</h2>
+            
+            <p>We have put in place procedures to deal with any suspected personal data breach. We will notify you and any applicable supervisory authority of a breach when we are legally required to do so.</p>
+            
+            <h2>9. Complaints</h2>
+            
+            <p>If you are not satisfied with our response to your request or believe our processing of your personal data does not comply with data protection law, you have the right to lodge a complaint with the supervisory authority responsible for data protection in your country of residence.</p>
+            
+            <p>In the EU, you can find your national data protection authority on the <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank" rel="noopener noreferrer">European Data Protection Board website</a>.</p>
+            
+            <p>We would, however, appreciate the chance to address your concerns before you approach the authority, so please contact us in the first instance.</p>
+            
+            <h2>10. Changes to This GDPR Compliance Statement</h2>
+            
+            <p>We may update this GDPR Compliance Statement from time to time. The updated version will be indicated by an updated "Last Updated" date at the top of this page. We encourage you to review this statement periodically to stay informed about how we are protecting your personal data.</p>
+            
+            <p class="last-updated">This GDPR Compliance Statement was last updated on January 15, 2025.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <div class="footer-logo" aria-label="SnapSpend">Snap<span>Spend</span></div>
+                    <p>Smart receipt scanning and expense tracking powered by AI.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Help Center">Help Center</a></li>
+                        <li><a href="#" aria-label="Blog">Blog</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="FAQs">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html" aria-label="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" aria-label="Terms of Service">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" aria-label="Cookie Policy">Cookie Policy</a></li>
+                        <li><a href="gdpr-compliance.html" aria-label="GDPR Compliance">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:support@snapspend.net" aria-label="Email support">support@snapspend.net</a></li>
+                        <li><a href="tel:+40768002803" aria-label="Phone support">+40 768 002 803</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SnapSpend. All rights reserved.</p>
+                <p>
+                    <a href="/sitemap.xml" aria-label="Sitemap">Sitemap</a> | 
+                    <a href="accessibility.html" aria-label="Accessibility Statement">Accessibility</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
