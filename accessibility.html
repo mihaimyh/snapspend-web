@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement - SnapSpend</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="SnapSpend's commitment to accessibility and inclusive design for our receipt scanning and expense tracking app.">
+    <meta name="keywords" content="accessibility, inclusive design, web accessibility, WCAG compliance, SnapSpend">
+    <meta name="author" content="SnapSpend">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#A78BFA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snapspend.net/accessibility.html">
+    <meta property="og:title" content="Accessibility Statement - SnapSpend">
+    <meta property="og:description" content="Learn about SnapSpend's commitment to accessibility and inclusive design.">
+    <meta property="og:image" content="https://snapspend.net/images/snapspend-social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://snapspend.net/accessibility.html">
+    <meta property="twitter:title" content="Accessibility Statement - SnapSpend">
+    <meta property="twitter:description" content="Learn about SnapSpend's commitment to accessibility and inclusive design.">
+    <meta property="twitter:image" content="https://snapspend.net/images/snapspend-twitter-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://snapspend.net/accessibility.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Primary colors - from MAUI app */
+            --primary: #A78BFA;
+            --primary-dark: #7E6EE8;
+            --primary-variant: #4C39D4;
+            
+            /* Secondary colors */
+            --secondary: #5945E7;
+            --secondary-variant: #9778F2;
+            
+            /* Surface colors */
+            --surface: #FFFFFF;
+            --surface-variant: #F2F2F2;
+            --surface-variant2: #E8E8E8;
+            --surface-variant3: #FAF5FF;
+            
+            /* Text colors */
+            --text: #212121;
+            --text-secondary: #666666;
+            
+            /* Dark theme colors (for footer and dark sections) */
+            --dark-bg: #121212;
+            --dark-surface: #2A2A2A;
+            --dark-surface2: #333333;
+            --dark-text: #F5F5F5;
+            --dark-text-secondary: #B0B0B0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--surface);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--surface-variant2);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--text);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--primary-variant);
+            color: white;
+        }
+        
+        /* Content styles */
+        .content {
+            padding: 3rem 0;
+        }
+        
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text);
+        }
+        
+        .content h3 {
+            font-size: 1.4rem;
+            margin: 1.8rem 0 0.8rem;
+            color: var(--primary-dark);
+        }
+        
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .content ul, .content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary);
+            transition: opacity 0.3s;
+        }
+        
+        .content a:hover {
+            opacity: 0.8;
+        }
+        
+        .content .last-updated {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--surface-variant2);
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h4 {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--dark-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--gray-500);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .content h1 {
+                font-size: 2rem;
+            }
+            
+            .content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Primary Navigation">
+                <a href="index.html" class="logo" aria-label="SnapSpend Home">Snap<span>Spend</span></a>
+                <div class="nav-links">
+                    <a href="index.html#features" aria-label="Features section">Features</a>
+                    <a href="index.html#how-it-works" aria-label="How it works section">How It Works</a>
+                    <a href="index.html#policies" aria-label="Policies section">Policies</a>
+                    <a href="index.html#contact" aria-label="Contact section">Contact</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.snapspendai" class="nav-cta" aria-label="Download on Google Play">Download</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container">
+            <h1>Accessibility Statement</h1>
+            
+            <p>Last updated: January 15, 2025</p>
+            
+            <p>SnapSpend is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+            
+            <h2>Measures to Support Accessibility</h2>
+            
+            <p>SnapSpend takes the following measures to ensure accessibility of our website and mobile application:</p>
+            
+            <ul>
+                <li>Include accessibility throughout our internal policies</li>
+                <li>Provide continual accessibility training for our staff</li>
+                <li>Assign clear accessibility targets and responsibilities</li>
+                <li>Employ formal accessibility quality assurance methods</li>
+            </ul>
+            
+            <h2>Conformance Status</h2>
+            
+            <p>The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
+            
+            <p>SnapSpend's website is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.</p>
+            
+            <h2>Technical Specifications</h2>
+            
+            <p>Accessibility of SnapSpend's website relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:</p>
+            
+            <ul>
+                <li>HTML</li>
+                <li>WAI-ARIA</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            
+            <h2>Assessment Approach</h2>
+            
+            <p>SnapSpend assessed the accessibility of our website by the following approaches:</p>
+            
+            <ul>
+                <li>Self-evaluation</li>
+                <li>External evaluation</li>
+                <li>User testing</li>
+            </ul>
+            
+            <h2>Feedback</h2>
+            
+            <p>We welcome your feedback on the accessibility of SnapSpend's website and mobile application. Please let us know if you encounter accessibility barriers:</p>
+            
+            <ul>
+                <li>Email: <a href="mailto:accessibility@snapspend.net">accessibility@snapspend.net</a></li>
+                <li>Phone: <a href="tel:+40768002803">+40 768 002 803</a></li>
+            </ul>
+            
+            <h2>Formal Complaints</h2>
+            
+            <p>We aim to respond to accessibility feedback within 2 business days, and to propose a solution within 10 business days. You are entitled to escalate a complaint to the national authority, should you be dissatisfied with our response to you.</p>
+            
+            <p class="last-updated">This statement was last updated on January 15, 2025</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <div class="footer-logo" aria-label="SnapSpend">Snap<span>Spend</span></div>
+                    <p>Smart receipt scanning and expense tracking powered by AI.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Help Center">Help Center</a></li>
+                        <li><a href="#" aria-label="Blog">Blog</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="FAQs">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html" aria-label="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" aria-label="Terms of Service">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" aria-label="Cookie Policy">Cookie Policy</a></li>
+                        <li><a href="gdpr-compliance.html" aria-label="GDPR Compliance">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:support@snapspend.net" aria-label="Email support">support@snapspend.net</a></li>
+                        <li><a href="tel:+40768002803" aria-label="Phone support">+40 768 002 803</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SnapSpend. All rights reserved.</p>
+                <p>
+                    <a href="/sitemap.xml" aria-label="Sitemap">Sitemap</a> | 
+                    <a href="accessibility.html" aria-label="Accessibility Statement">Accessibility</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
