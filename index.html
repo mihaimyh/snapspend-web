@@ -26,8 +26,11 @@
     <meta property="twitter:description" content="SnapSpend uses AI to scan your receipts, track expenses, and provide insights on your spending habits.">
     <meta property="twitter:image" content="https://snapspend.net/images/snapspend-twitter-preview.jpg">
     
-    <!-- Canonical URL -->
+    <!-- Canonical URL - This is the main URL that Google should index -->
     <link rel="canonical" href="https://snapspend.net/">
+    
+    <!-- Alternate URLs for different domains -->
+    <link rel="alternate" href="https://www.snapspend.net/" hreflang="x-default">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -156,7 +159,7 @@
         /* Hero section */
         .hero {
             padding: 5rem 0;
-            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1626197031507-c9c6dcd4336e?ixlib=rb-4.0.3&auto=format&fit=crop') no-repeat center/cover;
+            background: linear-gradient(135deg, var(--surface-variant3) 0%, var(--surface) 100%);
             position: relative;
         }
         
@@ -243,7 +246,7 @@
         }
         
         .section-title p {
-            color: var(--text-secondary);
+            color: var (--text-secondary);
             max-width: 700px;
             margin: 0 auto;
         }
