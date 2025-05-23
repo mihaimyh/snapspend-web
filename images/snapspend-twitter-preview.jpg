@@ -21,7 +21,7 @@
   </g>
   
   <!-- Text content -->
-  <text x="450" y="230" class="text" style="font-size:72px;font-weight:bold">SnapSpend</text>
+  <text x="450" y="230" class="text" style="font-size:72px;font-weight:bold">FlickAI</text>
   <text x="450" y="330" class="text" style="font-size:36px">Smart Receipt Scanning &amp;</text>
   <text x="450" y="380" class="text" style="font-size:36px">Expense Tracking powered by AI</text>
 </svg>
