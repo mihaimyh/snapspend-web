@@ -17,12 +17,23 @@ header[role="banner"] {
 /* Override nav links for consistent look */
 .nav-links a {
     color: var(--white);
+    padding: 10px 16px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--white);
     background-color: var(--secondary-light);
+}
+
+/* Styling for the Home button in navbar */
+.nav-links a.nav-link.active {
+    background-color: var(--secondary-light);
+    color: var(--white);
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Dark theme adjustments */

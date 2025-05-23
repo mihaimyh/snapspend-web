@@ -79,6 +79,8 @@ footer[role="contentinfo"] .container { /* Container within header and footer fo
     color: var(--white);
     background-color: var(--secondary-light);
     text-decoration: none; /* Ensure no underline on hover/active */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Main Content Area */

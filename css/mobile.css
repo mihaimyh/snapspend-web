@@ -2,38 +2,132 @@
 
 /* Mobile nav */
 @media (max-width: 767px) {
+    /* Hamburger menu button */
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 2000;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
+    
+    /* Transform hamburger to X on menu open */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
     /* Improve navigation layout */
     .navbar {
         flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
+        align-items: flex-start;
+        padding: 10px 15px;
+        position: relative;
     }
     
     .navbar .logo {
-        margin-bottom: 15px;
+        margin-bottom: 0;
         display: flex;
         align-items: center;
-        justify-content: center;
+        z-index: 1001;
     }
     
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px;
+    /* Nav links container */
+    .nav-links {        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px; /* Limit width on larger devices */
+        height: 100vh;
+        background-color: var(--primary-light); /* Match header color */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 70px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        right: 0;
     }
     
     .nav-links li {
-        margin: 5px;
+        margin: 10px 0;
+        width: 100%;
+        padding: 0 20px;
     }
     
     .nav-links a {
-        padding: 10px 15px;
+        padding: 12px 20px;
         display: block;
-        text-align: center;
-        border-radius: 20px;
+        text-align: left;
+        border-radius: 25px;
         font-weight: 600;
         font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    /* Enhanced active/hover styles for mobile */
+    .nav-links a:hover,
+    .nav-links a.active,
+    .nav-links a.nav-link.active {
+        background-color: var(--secondary-light);
+        color: var(--white);
+        transform: none; /* Remove desktop hover transform */
+        box-shadow: none; /* Remove desktop hover shadow */
+        padding-left: 25px; /* Indent active items slightly */
+        border-radius: 25px;
+    }
+    
+    /* Make the Home link stand out with left border indicator */
+    .nav-links a.nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 60%;
+        width: 4px;
+        background-color: var(--secondary-light);
+        border-radius: 0 4px 4px 0;
+    }
+    
+    /* Overlay for when menu is open */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 998;
+    }
+    
+    .menu-overlay.active {
+        display: block;
     }
     
     /* Hero section adjustments */
