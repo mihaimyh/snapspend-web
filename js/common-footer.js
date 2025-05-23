@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>&copy; 2025 FlickAI. All rights reserved.</p>
                 <p>
                     <a href="/sitemap.xml" aria-label="Sitemap">Sitemap</a> |
-                    <a href="https://FlickAi.net" aria-label="FlickAI Website">FlickAi.net</a>
+                    <a href="https://flickai.net" aria-label="FlickAI Website">flickai.net</a>
                 </p>
             </div>
         </div>
