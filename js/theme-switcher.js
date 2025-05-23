@@ -1,9 +1,17 @@
 // Theme Switcher for FlickAI website
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to set a specific theme
+document.addEventListener('DOMContentLoaded', function() {    // Function to set a specific theme
     function setTheme(themeName) {
         localStorage.setItem('flickai-theme', themeName);
         document.documentElement.setAttribute('data-theme', themeName);
+        
+        // Apply specific class changes for compatibility with existing code
+        if (themeName === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+        }
     }
 
     // Function to toggle between light and dark themes
@@ -14,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             setTheme('light');
         }
-    }
-
-    // Function to initialize theme from user preference or system preference
+    }    // Function to initialize theme from user preference or system preference
     function initTheme() {
         // Check if user has previously chosen a theme
         const savedTheme = localStorage.getItem('flickai-theme');
@@ -36,6 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('flickai-theme', 'light');
             }
         }
+        
+        // Force a full repaint to ensure all styles are applied properly
+        document.body.style.display = 'none';
+        setTimeout(() => {
+            document.body.style.display = '';
+        }, 10);
     }
 
     // Create theme toggle button
@@ -186,50 +198,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 1;
                 visibility: visible;
             }
-            
-            /* CSS Variables for light/dark themes */
+              /* CSS Variables for light/dark themes */
             :root {
                 /* Using existing color variables from the colors.css file */
                 color-scheme: light;
             }
             
+            /* Apply theme styles to all relevant elements */
             [data-theme="dark"] {
                 /* Dark theme */
                 color-scheme: dark;
-                --background: var(--background-dark);
-                --surface: var(--surface-dark);
-                --surface-variant: var(--surface-dark-variant);
-                --surface-variant2: var(--surface-dark-variant2);
-                --text-primary: var(--text-dark);
-                --text-secondary: var(--text-dark-secondary);
-                --primary: var(--primary-dark);
-                --primary-variant: var(--primary-dark-variant);
-                --secondary: var(--secondary-dark);
-                --secondary-variant: var(--secondary-dark-variant);
-                --error: var(--error-dark);
-                --error-background: var(--error-dark-background);
-            }
-            
-            [data-theme="light"] {
-                /* Light theme */
-                color-scheme: light;
-                --background: var(--background-light);
-                --surface: var(--surface-light);
-                --surface-variant: var(--surface-light-variant);
-                --surface-variant2: var(--surface-light-variant2);
-                --text-primary: var(--text-light);
-                --text-secondary: var(--text-light-secondary);
-                --primary: var(--primary-light);
-                --primary-variant: var(--primary-light-variant);
-                --secondary: var(--secondary-light);
-                --secondary-variant: var(--secondary-light-variant);
-                --error: var(--error-light);
-                --error-background: var(--error-light-background);
-            }
-            
-            /* Core theme styles */
-            body {
-                transition: background-color 0.3s ease, color 0.3s ease;
             }
             
             [data-theme="dark"] body {
@@ -237,9 +215,75 @@ document.addEventListener('DOMContentLoaded', function() {
                 color: var(--text-dark);
             }
             
-            [data-theme="light"] body {
-                background-color: var(--background-light);
-                color: var(--text-light);
+            [data-theme="dark"] header[role="banner"] {
+                background-color: var(--primary-dark);
+            }
+            
+            [data-theme="dark"] .feature-item {
+                background-color: var(--surface-dark);
+                color: var(--text-dark);
+            }
+            
+            [data-theme="dark"] section {
+                background-color: var(--background-dark);
+            }
+            
+            [data-theme="dark"] section:nth-child(even) {
+                background-color: var(--surface-dark-variant);
+            }
+            
+            [data-theme="dark"] .container {
+                background-color: transparent;
+            }
+            
+            [data-theme="dark"] h2.section-title {
+                color: var(--primary-dark);
+            }
+            
+            [data-theme="dark"] form input[type="text"],
+            [data-theme="dark"] form input[type="email"],
+            [data-theme="dark"] form textarea {
+                background-color: var(--surface-dark);
+                color: var(--text-dark);
+                border-color: var(--gray-700);
+            }
+            
+            [data-theme="dark"] .feature-item h3 {
+                color: var(--primary-dark);
+            }
+            
+            [data-theme="dark"] .testimonial {
+                background-color: var(--secondary-dark);
+            }
+            
+            [data-theme="dark"] form button {
+                background-color: var(--primary-dark);
+            }
+            
+            [data-theme="dark"] form button:hover {
+                background-color: var(--accent-dark);
+            }
+            
+            [data-theme="dark"] .hero {
+                background: linear-gradient(to right, var(--primary-dark), var(--accent-dark));
+            }
+            
+            [data-theme="dark"] h2.section-title::after {
+                background-color: var(--secondary-dark);
+            }
+            
+            [data-theme="dark"] footer {
+                background-color: var(--gray-950);
+            }
+            
+            [data-theme="dark"] main.page-content .container {
+                background-color: var(--surface-dark);
+            }
+            
+            /* Core theme styles with transitions */
+            body, header, section, .feature-item, form input, form textarea, .hero, footer, 
+            main.page-content .container {
+                transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
             }
         `;
         document.head.appendChild(styleElement);

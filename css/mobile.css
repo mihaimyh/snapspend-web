@@ -1,0 +1,136 @@
+/* Mobile optimizations for FlickAI website */
+
+/* Mobile nav */
+@media (max-width: 767px) {
+    /* Improve navigation layout */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .navbar .logo {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .nav-links li {
+        margin: 5px;
+    }
+    
+    .nav-links a {
+        padding: 10px 15px;
+        display: block;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        padding: 60px 15px 80px;
+        min-height: auto;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    /* Make download buttons better on mobile */
+    .download-buttons {
+        flex-direction: column;
+        width: 85%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .download-button {
+        padding: 15px;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    /* Adjust container padding */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Improve feature display */
+    .features-grid {
+        gap: 20px;
+    }
+    
+    .feature-item {
+        padding: 25px 15px;
+    }
+    
+    /* Footer adjustments */
+    .footer-links a {
+        margin: 0 8px;
+        display: inline-block;
+        padding: 5px 0;
+    }
+    
+    /* Adjust spacing for sections */
+    section {
+        padding: 40px 15px 60px;
+    }
+    
+    h2.section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Make theme toggle smaller and position it better */
+    .theme-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    /* Adjust testimonials */
+    .testimonial {
+        padding: 25px 15px;
+    }
+    
+    /* Form adjustments */
+    form button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+    
+    /* Ensure the content has proper margins */
+    .page-content .container {
+        padding: 20px 15px;
+    }
+}
