@@ -1,36 +1,35 @@
 // Common header for FlickAI website
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle both index.html and other pages that use a placeholder
+    // Handle all pages with a header placeholder
     const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
     const headerPlaceholder = document.querySelector('#header-placeholder');
     
-    // If this is not the index page and no placeholder exists, do nothing
-    if (!isIndexPage && !headerPlaceholder) return;
+    // If no placeholder exists, do nothing
+    if (!headerPlaceholder) return;
     
-    // If this is the index page, we'll modify the existing header
-    if (isIndexPage) {
-        // For index.html, we just need to ensure the links are set up correctly
-        setupIndexPageNav();
-        return;
-    }
-    
-    // For non-index pages with a placeholder, create the header
+    // Create a header with different navigation based on page type
     const header = document.createElement('header');
     header.setAttribute('role', 'banner');
     
-    // Add header content - use section hash links for index.html page
+    // Use different link formats based on whether this is the index page or not
+    const homeLink = isIndexPage ? '#home' : 'index.html';
+    const featuresLink = isIndexPage ? '#features' : 'index.html#features';
+    const aboutLink = isIndexPage ? '#about' : 'index.html#about';
+    const contactLink = isIndexPage ? '#contact' : 'index.html#contact';
+    
+    // Create header HTML content
     header.innerHTML = `
         <div class="container">
             <nav class="navbar" aria-label="Primary Navigation">
-                <a href="index.html" class="logo" aria-label="FlickAI Home">
+                <a href="${homeLink}" class="logo" aria-label="FlickAI Home">
                     <img src="images/flickai-logo.jpeg" alt="FlickAI Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
                     <span>FlickAI</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-link" aria-label="Home page">Home</a></li>
-                    <li><a href="index.html#features" class="nav-link" aria-label="Features section">Features</a></li>
-                    <li><a href="index.html#about" class="nav-link" aria-label="About section">About</a></li>
-                    <li><a href="index.html#contact" class="nav-link" aria-label="Contact section">Contact</a></li>
+                    <li><a href="${homeLink}" class="nav-link" aria-label="Home section">Home</a></li>
+                    <li><a href="${featuresLink}" class="nav-link" aria-label="Features section">Features</a></li>
+                    <li><a href="${aboutLink}" class="nav-link" aria-label="About section">About</a></li>
+                    <li><a href="${contactLink}" class="nav-link" aria-label="Contact section">Contact</a></li>
                     <li><a href="privacy-policy.html" aria-label="Privacy Policy">Privacy</a></li>
                 </ul>
             </nav>
@@ -39,9 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Replace the placeholder with the header
     headerPlaceholder.replaceWith(header);
-    
-    // Set the active nav item based on current page
-    setActiveNavItem();
+      // Set up special behavior for index page
+    if (isIndexPage) {
+        setupIndexPageNav();
+    } else {
+        // For non-index pages, just set the active nav item
+        setActiveNavItem();
+    }
 });
 
 // Function specifically for index.html navigation setup
