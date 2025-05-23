@@ -505,27 +505,11 @@
                     <a href="https://FlickAi.net" aria-label="FlickAI Website">FlickAi.net</a>
                 </p>
             </div>
-        </div>
-    </footer>    <script src="js/theme-switcher.js"></script>
+        </div>    </footer>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/common-header.js"></script>
     <script src="js/mobile-menu.js"></script>
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Update active class on nav links
-                    document.querySelectorAll('a.nav-link').forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
-
         // Intersection Observer for fade-in animations
         const animatedElements = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver((entries) => {
@@ -540,32 +524,6 @@
         animatedElements.forEach(el => {
             observer.observe(el);
         });
-
-        // Active nav link highlighting on scroll
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 60) { // 60 is approx header height
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('nav ul li a').forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').substring(1) === current) {
-                    a.classList.add('active');
-                }
-            });
-            // Special case for home when at the very top
-            if (pageYOffset < sections[0].offsetTop - 60) {
-                 document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
-                 const homeLink = document.querySelector('nav ul li a[href="#home"]');
-                 if(homeLink) homeLink.classList.add('active');
-            }
-        });
-
     </script>
 </body>
 </html>
